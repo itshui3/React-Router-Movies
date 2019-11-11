@@ -3,6 +3,8 @@ import {Route} from 'react-router-dom';
 
 import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
+import Movie from './Movies/Movie';
+// import { prependOnceListener } from 'cluster';
 
 const App = () => {
   const [savedList, setSavedList] = useState( [] );
@@ -14,8 +16,8 @@ const App = () => {
   return (
     <div>
       <SavedList list={savedList} />
-      <Route path="/" component={MovieList}></Route>
-      <Route path="/movie/:id"></Route>
+      <Route exact path="/" component={MovieList}></Route>
+      <Route path="/movies/:id" component={Movie}></Route>
     </div>
   );
 };
